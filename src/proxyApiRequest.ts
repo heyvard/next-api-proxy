@@ -27,7 +27,7 @@ export async function proxyApiRouteRequest({
     https: useHttps = true,
 }: ProxyApiRouteRequestOptions): Promise<void> {
     const headers = {
-        ...copyHeaders(req.headers),
+        ...copyHeaders(req.headers, undefined),
     }
     if (bearerToken) {
         headers.Authorization = `Bearer ${bearerToken}`
